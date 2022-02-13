@@ -1,0 +1,45 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  column-gap: 10px;
+  padding: 10px;
+}
+
+.actionContainer {
+  grid-column: 1/2;
+  overflow-y: scroll;
+}
+
+.mapContainer {
+  grid-column: 2/3;
+  overflow-y: scroll;
+}
+
+.actionContainer::-webkit-scrollbar, .mapContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.mapContainer, .actionContainer {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    grid-template-rows: min-content 500px;
+    grid-template-columns: 1fr;
+  }
+
+  .actionContainer {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .mapContainer {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+}
